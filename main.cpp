@@ -11,7 +11,7 @@ int display(){
     cout <<  "╚█████╔╝███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n";
     cout <<  "░╚════╝░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝\u001b[0m\n";
     cout <<  "# Made by \u001b[37;1mSrcyDev\u001b[0m (https://github.com/SrcyDev/)\n";
-	cout <<  "# Project: \u001b[37;1mCLI Calculator Python \u001b[0m (https://github.com/SrcyDev/CLI-Calculator-CPP/)\n";
+	cout <<  "# Project: \u001b[37;1mCLI Calculator C++ \u001b[0m (https://github.com/SrcyDev/CLI-Calculator-CPP/)\n";
     
     return 0;
 }
