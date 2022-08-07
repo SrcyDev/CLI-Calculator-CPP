@@ -3,9 +3,6 @@
 
 using namespace std;
 
-void print(string s){
-    cout << s;
-}
 int display(){
     cout <<  "\u001b[33m░█████╗░██╗░░░░░██╗  ░█████╗░░█████╗░██╗░░░░░░█████╗░██╗░░░██╗██╗░░░░░░█████╗░████████╗░█████╗░██████╗░\n";
     cout <<  "██╔══██╗██║░░░░░██║  ██╔══██╗██╔══██╗██║░░░░░██╔══██╗██║░░░██║██║░░░░░██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n";
@@ -14,7 +11,7 @@ int display(){
     cout <<  "╚█████╔╝███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n";
     cout <<  "░╚════╝░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝\u001b[0m\n";
     cout <<  "# Made by \u001b[37;1mSrcyDev\u001b[0m (https://github.com/SrcyDev/)\n";
-    cout <<  "# Project: \u001b[37;1mCLI Calculator C++ \u001b[0m (https://github.com/SrcyDev/CLI-Calculator-CPP/)\n";
+	cout <<  "# Project: \u001b[37;1mCLI Calculator Python \u001b[0m (https://github.com/SrcyDev/CLI-Calculator-CPP/)\n";
     
     return 0;
 }
@@ -48,13 +45,13 @@ int mod(long double x,long double y){
     return 0;
 }
 
-int percent(double x, double y){
+int percent(long double x,long double y){
     cout << "\n\u001b[34;1mThe result of " << x << " % " << y << " = " << "\u001b[32m" << x * y/100 << "\u001b[0m\n";
 
     return 0;
 }
 
-int sqroot(double x){
+int sqroot(long double x){
     cout << "\n\u001b[34;1mThe result of " << "\u221A" << x << " = " << "\u001b[32m" << sqrt(x) << "\u001b[0m\n";
 
     return 0;
@@ -74,15 +71,15 @@ int power(long double x,long double y){
 }
 
 void help(){
-    print("\u001b[31;1mAddition: + : For adding two values. \n");
-    print("\u001b[32;1mSubtraction: - : For subtracting two values. \n");
-    print("\u001b[33;1mMultiplication: * : For multiplying two values. \n");
-    print("\u001b[34;1mDivision: / : For dividing two values. \n");
-    print("\u001b[35;1mModulus: _ : For finding the Remainder/Modulus of a value. \n");
-    print("\u001b[36;1mPercentage: % : For finding percentage of a value.\n");
-    print("\u001b[37;1mPower: ^ : For finding the Exponent of values.\n");
-    print("\u001b[31mSquare Root: !  : For finding square root of a single value.\n");
-    print("\u001b[32;1mHelp: h : Shows this page.\n");
+    cout << "\u001b[31;1mAddition: + : For adding two values. \n";
+    cout << "\u001b[32;1mSubtraction: - : For subtracting two values. \n";
+    cout << "\u001b[33;1mMultiplication: * : For multiplying two values. \n";
+    cout << "\u001b[34;1mDivision: / : For dividing two values. \n";
+    cout << "\u001b[35;1mModulus: m : For finding the Remainder/Modulus of a value. \n";
+    cout << "\u001b[36;1mPercentage: % : For finding percentage of a value.\n";
+    cout << "\u001b[37;1mPower: ^ : For finding the Exponent of values.\n";
+    cout << "\u001b[31mSquare Root: s  : For finding square root of a single value.\n";
+    cout << "\u001b[32;1mHelp: h : Shows this page.\n";
 }
 
 int process(){
@@ -101,21 +98,19 @@ int process(){
     cin >> c;
     cout << "\n";
     if (c == "s"){
-        cout << "\n\u001b[35;1mEnter first number: \u001b[0m\n";
+        cout << "\u001b[35;1mEnter first number: \u001b[0m\n";
         cout << "\u001b[32;1m> \u001b[0m";
         cin >> x;
         sqroot(x);
     }else if(c == "h"){
         help();
     }else{
-        cout << "\n\u001b[35;1mEnter first number: \u001b[0m\n";
+        cout << "\u001b[35;1mEnter first number: \u001b[0m\n";
         cout << "\u001b[32;1m> \u001b[0m";
         cin >> x;
-        cout << "\n";
         cout << "\n\u001b[34;1mEnter second number:  \u001b[0m\n";
         cout << "\u001b[32;1m> \u001b[0m"; 
         cin >> y;
-        cout << "\n";
         if (c == "+"){
             add(x,y);
         }else if(c == "-"){
