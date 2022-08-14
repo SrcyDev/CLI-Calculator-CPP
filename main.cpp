@@ -1,170 +1,195 @@
-#include "source.h"
+#include "CLI-Calculator-CPP.h"
 
 using namespace std;
 
-int display() {
-    cout << "\u001b[33m░█████╗░██╗░░░░░██╗  ░█████╗░░█████╗░██╗░░░░░░█████╗░██╗░░░██╗██╗░░░░░░█████╗░████████╗░█████╗░██████╗░\n";
-    cout << "██╔══██╗██║░░░░░██║  ██╔══██╗██╔══██╗██║░░░░░██╔══██╗██║░░░██║██║░░░░░██╔══██╗╚══██╔══╝██╔══██╗██╔══██╗\n";
-    cout << "██║░░╚═╝██║░░░░░██║  ██║░░╚═╝███████║██║░░░░░██║░░╚═╝██║░░░██║██║░░░░░███████║░░░██║░░░██║░░██║██████╔╝\n";
-    cout << "██║░░██╗██║░░░░░██║  ██║░░██╗██╔══██║██║░░░░░██║░░██╗██║░░░██║██║░░░░░██╔══██║░░░██║░░░██║░░██║██╔══██╗\n";
-    cout << "╚█████╔╝███████╗██║  ╚█████╔╝██║░░██║███████╗╚█████╔╝╚██████╔╝███████╗██║░░██║░░░██║░░░╚█████╔╝██║░░██║\n";
-    cout << "░╚════╝░╚══════╝╚═╝  ░╚════╝░╚═╝░░╚═╝╚══════╝░╚════╝░░╚═════╝░╚══════╝╚═╝░░╚═╝░░░╚═╝░░░░╚════╝░╚═╝░░╚═╝\u001b[0m\n";
-    cout << "# Made by \u001b[37;1mSrcyDev\u001b[0m (https://github.com/SrcyDev/)\n";
-    cout << "# Project: \u001b[37;1mCLI Calculator C++ \u001b[0m (https://github.com/SrcyDev/CLI-Calculator-CPP/)\n";
-
-    return 0;
-}
-
-
-int add(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " + " << y << " = " << "\u001b[32m" << x + y << "\u001b[0m\n";
-
-    return 0;
-}
-
-int sub(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " - " << y << " = " << "\u001b[32m" << x - y << "\u001b[0m\n";
-
-    return 0;
-}
-
-int multiply(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " * " << y << " = " << "\u001b[32m" << x * y << "\u001b[0m\n";
-
-    return 0;
-}
-
-int divide(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " / " << y << " = " << "\u001b[32m" << x / y << "\u001b[0m\n";
-
-    return 0;
-}
-
-int mod(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << "\u001b[32;1m MOD \u001b[0m\u001b[34m" << y << " = " << "\u001b[32m" << fmod(x, y) << "\u001b[0m\n";
-
-    return 0;
-}
-
-int percent(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " % " << y << " = " << "\u001b[32m" << x * y / 100 << "\u001b[0m\n";
-
-    return 0;
-}
-
-int power(long double x, long double y) {
-    cout << "\n\u001b[34;1mThe result of " << x << " ^ " << y << " = " << "\u001b[32m" << pow(x,y) << "\u001b[0m\n";
-
-    return 0;
-}
-
-int rt(long double x,long double y) {
-    
-    cout << "\n\u001b[34;1mThe result of \u221A" << x << " = " << "\u001b[32m" << pow(x, 1.0/y) << "\u001b[0m\n";
-
-    return 0;
-}
-
-void help() {
-    cout << "\u001b[31;1mAddition: + : For adding two values. \n";
-    cout << "\u001b[32;1mSubtraction: - : For subtracting two values. \n";
-    cout << "\u001b[33;1mMultiplication: * : For multiplying two values. \n";
-    cout << "\u001b[34;1mDivision: / : For dividing two values. \n";
-    cout << "\u001b[35;1mModulus: m : For finding the Remainder/Modulus of a value. \n";
-    cout << "\u001b[36;1mPercentage: % : For finding percentage of a value.\n";
-    cout << "\u001b[37;1mPower: ^ : For finding the Exponent of values.\n";
-    cout << "\u001b[31mSquare Root: s  : For finding square root of a single value.\n";
-    cout << "\u001b[32;1mHelp: h : Shows this page.\n";
-}
-
-int process() {
-    double x, y;
-    string c;
-    cout << "\u001b[35;1mEnter first value: \u001b[0m\n";
-    cout << "\u001b[32;1m> \u001b[0m";
-    cin >> x; 
-    cout << "\n";
-    cout << "\n\u001b[31;1mEnter your operator as follows: ";
-    cout << "\n\u001b[32;1mAddition: +";
-    cout << "\n\u001b[33;1mSubtraction: -";
-    cout << "\n\u001b[34;1mMultiplication: *";
-    cout << "\n\u001b[35;1mDivision: / ";
-    cout << "\n\u001b[36;1mModulus: m";
-    cout << "\n\u001b[31;1mPower: ^";
-    cout << "\n\u001b[37;1mRoot: s";
-    cout << "\n\u001b[33;1mHelp: h\u001b[0m\n";
-    cout << "\u001b[32;1m> \u001b[0m";
-    cin >> c;
-    cout << "\n";
-    cout << "\n\u001b[34;1mEnter second value:  \u001b[0m\n";
-    cout << "\u001b[32;1m> \u001b[0m";
-    cin >> y;
-    if (c == "+") {
-        add(x, y);
-    }
-    else if (c == "-") {
-        sub(x, y);
-    }
-    else if (c == "*") {
-        multiply(x, y);
-    }
-    else if (c == "/") {
-        divide(x, y);
-    }
-    else if (c == "^") {
-        power(x, y);
-    }
-    else if (c == "%") {
-        percent(x, y);
-    }
-    else if (c == "m") {
-        mod(x, y);
-    }
-    else if (c == "s") {
-        rt(x, y);
-    }
-    else if (c == "h") {
-        help();
-    }
-    else {
-        cout << "\n\u001b[31;1mERROR.... Unable to Determine. Please check your entered input and try again.\u001b[0m\n";
-    }
-    return 0;
-}
+class Calc {
+    public:
         
-int ask() {
-    cout << "\u001b[36mDo you want to continue ([Y]es/[N]o) ?: \n";
-    string choice;
-    cout << "\u001b[32;1m> \u001b[0m";
-    cin >> choice;
-    int c = choice.length();
-    for (int i = 0; i < c; i++) {
-        choice[i] = tolower(choice[i]);
-    }
+        static int add(long double x, long double y) {
+            cout << "\n\x1b[34;1mThe result of " << x << " + " << y << " = " << "\x1b[32m" << x + y << "\x1b[0m\n";
 
-    if (choice == "yes" || choice == "ye" || choice == "y") {
-        process();
-        ask();
-    }
-    else if (choice == "no" || choice == "n") {
-        cout << "\u001b[31;1mExiting....\n\u001b[0m";
-    }
-    else{
-        cout << "\n\u001b[31;1mERROR.... Unable to Calculate. Please check your entered input and try again.\u001b[0m\n";
-        ask();
-    }
-    return 0;
-}
+            return 0;
+        }
+  
+        static int sub(long double x, long double y) {
+            cout << "\n\x1b[34;1mThe result of " << x << " - " << y << " = " << "\x1b[32m" << x - y << "\x1b[0m\n";
+
+            return 0;
+        }
+   
+        static int multiply(long double x, long double y) {
+            cout << "\n\x1b[34;1mThe result of " << x << " * " << y << " = " << "\x1b[32m" << x * y << "\x1b[0m\n";
+
+            return 0;
+        }
+    
+        static int divide(long double x, long double y) {
+            cout << "\n\x1b[34;1mThe result of " << x << " / " << y << " = " << "\x1b[32m" << x / y << "\x1b[0m\n";
+
+            return 0;
+        }
+    
+        static int mod(long double x, long double y) {
+            
+            cout << "\n\x1b[34;1mThe result of " << x << "\x1b[32;1m MOD \x1b[0m\x1b[34m" << y << " = " << "\x1b[32m" << x - (x / y) * y << "\x1b[0m\n";
+
+            return 0;
+        }
+ 
+        static int percent(long double x, long double y) {
+            cout << "\n\x1b[34;1mThe result of " << x << " % " << y << " = " << "\x1b[32m" << x * y / 100 << "\x1b[0m\n";
+
+            return 0;
+        }
+
+        static int power(long double x, long double y) {
+            long double r = 1;
+
+            while (y != 0) {
+                r *= x;
+                --y;
+            }
+
+            cout << "\n\x1b[34;1mThe result of " << x << " ^ " << y << " = " << "\x1b[32m" << r << "\x1b[0m\n";
+
+            return 0;
+        }
+
+        static int rt(long double x, long double y) {
+            // Help required to localize the process without using pow
+            cout << "\n\x1b[34;1mThe result of "<< y << "\x1b[32;1m SQRT \x1b[0m\x1b[34m" << x << " = " << "\x1b[32m" << pow(x,1.0/y) << "\x1b[0m\n";
+
+            return 0;
+        }
+    
+        static void help() {
+            cout << "\x1b[31;1mAddition: + : For adding two values. \n";
+            cout << "\x1b[32;1mSubtraction: - : For subtracting two values. \n";
+            cout << "\x1b[33;1mMultiplication: * : For multiplying two values. \n";
+            cout << "\x1b[34;1mDivision: / : For dividing two values. \n";
+            cout << "\x1b[35;1mModulus: m : For finding the Remainder/Modulus of a value. \n";
+            cout << "\x1b[36;1mPercentage: % : For finding percentage of a value.\n";
+            cout << "\x1b[37;1mPower: ^ : For finding the Exponent of values.\n";
+            cout << "\x1b[31mRoot: s  : For finding root of a value.\n";
+            cout << "\x1b[32;1mHelp: h : Shows this page.\n";
+        }
+
+    
+        static int ask() {
+            cout << "\x1b[36mDo you want to continue ([Y]es/[N]o) ?: \n";
+            string choice;
+            cout << "\x1b[32;1m> \x1b[0m";
+            cin >> choice;
+            int c = (int)choice.length();
+            for (int i = 0; i < c; i++) {
+                choice[i] = tolower(choice[i]);
+            }
+
+            if (choice == "yes" || choice == "ye" || choice == "y") {
+                process();
+                ask();
+            }
+            else if (choice == "no" || choice == "n") {
+                cout << "\x1b[31;1mExiting....\n\x1b[0m"; 
+            }
+            else {
+                cout << "\n\x1b[31;1mERROR.... Unable to Calculate. Please check your entered input and try again.\x1b[0m\n";
+                ask();
+            }
+            return 0;
+        }
+
+        static int process() {
+            double x, y;
+            string c;
+            cout << "\x1b[35;1mEnter first value: \x1b[0m\n";
+            cout << "\x1b[32;1m> \x1b[0m";
+            cin >> x;
+            
+            if (cin.fail()) {
+                cout << "\n\x1b[31;1mERROR.... Unable to Determine. Please check your entered input and try again.\x1b[0m\n";
+                exit(-1);
+            }
+
+            cout << "\n";
+            cout << "\n\x1b[31;1mEnter your operator as follows: ";
+            cout << "\n\x1b[32;1mAddition: +";
+            cout << "\n\x1b[33;1mSubtraction: -";
+            cout << "\n\x1b[34;1mMultiplication: *";
+            cout << "\n\x1b[35;1mDivision: / ";
+            cout << "\n\x1b[36;1mModulus: m";
+            cout << "\n\x1b[31;1mPower: ^";
+            cout << "\n\x1b[37;1mRoot: s";
+            cout << "\n\x1b[33;1mHelp: h\x1b[0m\n";
+            cout << "\x1b[32;1m> \x1b[0m";
+            cin >> c;
+
+            if (cin.fail()) {
+                cout << "\n\x1b[31;1mERROR.... Unable to Determine. Please check your entered input and try again.\x1b[0m\n";
+                exit(-1);
+            }
+
+            cout << "\n";
+            cout << "\n\x1b[34;1mEnter second value:  \x1b[0m\n";
+            cout << "\x1b[32;1m> \x1b[0m";
+            cin >> y;
+
+            if (cin.fail()) {
+                cout << "\n\u001b[31;1mERROR.... Unable to Determine. Please check your entered input and try again.\u001b[0m\n";
+                exit(-1);
+                
+            }
+
+            if (c == "+") {
+                add(x, y);
+            }
+            else if (c == "-") {
+                sub(x, y);
+            }
+            else if (c == "*") {
+                multiply(x, y);
+            }
+            else if (c == "/") {
+                divide(x, y);
+            }
+            else if (c == "^") {
+                power(x, y);
+            }
+            else if (c == "%") {
+                percent(x, y);
+            }
+            else if (c == "m") {
+                mod(x, y);
+            }
+            else if (c == "s") {
+                rt(x, y);
+            }
+            else if (c == "h") {
+                help();
+            }
+            else {
+                cout << "\n\x1b[31;1mERROR.... Unable to Determine. Please check your entered input and try again.\x1b[0m\n";
+                exit(-1);
+            }
+
+            
+
+            return 0;
+
+        }
+};
 
 int main() {
-    // To avoid dump error message
     try {
-        display();
-        process();
-        ask();
+        
+        Calc run;
+        run.process();
+        run.ask();
     }
-    catch (...) {
+    catch(exception e) {
         cout << "";
+        exit(0);
     }
+    
     return 0;
 }
